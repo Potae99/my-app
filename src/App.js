@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Input_URL from './component/Input_URL'
+import BackgroundWeb from './component/BackgroundWeb'
+import Result_URL from './component/Result_URL'
+
 
 function App() {
+  const [inputValue, setInputValue] = useState("");
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <Input_URL setInputValue={setInputValue} />
+    <BackgroundWeb/>
+    <Result_URL inputValue ={inputValue} />
     </div>
-  );
+    
+  )
 }
 
-export default App;
+export default App
